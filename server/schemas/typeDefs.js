@@ -22,12 +22,12 @@ type Auth {
 
 type Query {
     # get return one user's bookmarks
-    getBookmarks(user:String):Bookmark
+    getAUsersBookmarks(user:String):Bookmark
 }
 
 type Mutation {
     # add a user
-    addUser(firstName:String, lastName:String, username:String, password:String)
+    addUser(firstName:String, lastName:String, username:String, password:String):User
     # add a bookmark
     addBookmark(username:String):User
     #login user

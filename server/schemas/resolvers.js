@@ -1,4 +1,4 @@
-const { Movie, Bookmark } = require('../models');
+const { Movie, Bookmark, User } = require('../models');
 
 const resolvers = {
     Query: {
@@ -26,6 +26,8 @@ const resolvers = {
       },
 
       addUser: async (parent, { firstName, lastName, username, password }) => {
+        console.log("🚀 ~ addUser: ~ firstName, lastName, username, password:", firstName, lastName, username, password)
+        
         return User.create({firstName, lastName, username, password})
       },
 
