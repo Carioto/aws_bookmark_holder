@@ -8,10 +8,12 @@ type Bookmark {
   }
     
 type User {
+    _id:ID
     firstName:String
     lastName:String
     username:String
     password:String
+    bookmarks:[Bookmark]
   } 
 
 type Auth {
@@ -21,17 +23,31 @@ type Auth {
 }
 
 type Query {
+    # get all usernames
+    getAllUsers:[User]
+
     # get return one user's bookmarks
-    getAUsersBookmarks(user:String):Bookmark
+    getAUsersBookmarks(_id:ID):User
 }
 
 type Mutation {
-    # add a user
-    addUser(firstName:String, lastName:String, username:String, password:String):User
-    # add a bookmark
-    addBookmark(username:String):User
-    #login user
-    login(username:String, password:String): Auth
+  # add a user
+     addUser(firstName:String, lastName:String, username:String, password:String):User
+  
+  # change first and/or last name
+     changeName(_id:ID, firstName:String, lastName:String):User
+     
+  # add a bookmark
+     addBookmark (_id:ID,url:String, description: String,category:String):Bookmark
+    
+  # login user
+     login(username:String, password:String): Auth
+
+  # update a bookmark
+     updateBookmark(_id:ID, url:String, description: String,category:String):Bookmark
+
+  # delete a bookmark
+      deleteBookmark(_id:ID):Bookmark
 
 }
 `;

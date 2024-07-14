@@ -3,11 +3,18 @@ const { Movie, Bookmark, User } = require('../models');
 const resolvers = {
     Query: {
                
-        getAUsersBookmarks:async(parent, {id}) => {
-          const allBooks=  await Bookmark.findById(
+        getAUsersBookmarks:async(parent, {_id}) => {
+          const allBooks=  await User.findById(
               {_id:_id}
-              );
-            return moviepick
+              ).populate('bookmarks');
+            return allBooks
+          },          
+
+
+
+        getAllUsers:async() => {
+          const allUsers =  await User.find();
+            return allUsers
           },          
     },
 
@@ -25,16 +32,33 @@ const resolvers = {
       return { token, user };
       },
 
-      addUser: async (parent, { firstName, lastName, username, password }) => {
-        console.log("🚀 ~ addUser: ~ firstName, lastName, username, password:", firstName, lastName, username, password)
-        
+      addUser: async (parent, { firstName, lastName, username, password }) => {     
         return User.create({firstName, lastName, username, password})
       },
 
-      addBookmark: async (parent,{username,url, description, category}) => {
-        const newUrl = await User.findOneAndUpdate({username:username}, {$addToSet:{bookmarks:{url, description,category}}})
+      addBookmark: async (parent,{_id,url, description, category}) => {
+        console.log("🚀 ~ addBookmark: ~ username,url, description, category:", _id,url, description, category)
+        const username = _id;
+        const newUrl = await Bookmark.create({description, url, category,username})
+        await User.findOneAndUpdate({_id:_id}, {$addToSet:{bookmarks:newUrl.id}})
         return newUrl;
       },
+      
+      changeName: async (parent,{_id,firstName, lastName}) => {        
+        const newName = await User.findOneAndUpdate({_id:_id}, {$set:{firstName:firstName,lastName:lastName}})
+        return newName;
+      },
+
+      updateBookmark: async (parent, {_id, url, description, category}) => {
+        const updBookmark = await Bookmark.findByIdAndUpdate({_id:_id}, { $set:{url:url, description:description, category:category}})
+        return updBookmark;
+      },
+
+      deleteBookmark: async (parent,{_id}) => {
+        const delBookmark = await Bookmark.findByIdAndDelete({_id:_id})
+        return delBookmark;
+      }
+
 
     }
 }

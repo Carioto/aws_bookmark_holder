@@ -11,7 +11,7 @@ const bookmarkSchema = new Schema (
         category: {
             type: String,
         },
-        user:{
+        username:{
             type:Schema.Types.ObjectId,
             ref: 'User'
         },
