@@ -1,4 +1,5 @@
 const { Movie, Bookmark, User } = require('../models');
+const { signToken, AuthenticationError } = require('../utils/auth')
 
 const resolvers = {
     Query: {
@@ -10,9 +11,7 @@ const resolvers = {
             return allBooks
           },          
 
-
-
-        getAllUsers:async() => {
+          getAllUsers:async() => {
           const allUsers =  await User.find();
             return allUsers
           },          
@@ -58,8 +57,6 @@ const resolvers = {
         const delBookmark = await Bookmark.findByIdAndDelete({_id:_id})
         return delBookmark;
       }
-
-
     }
 }
 
