@@ -26,15 +26,16 @@ const UserLogin = () => {
       const { data } = await login({
         variables: { ...formState },
       });
-
+      
       if (!data) {
         setErrorMessage("Login unsucessful");
         return;
       }
-
+      
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
+
     }
 
     setFormState({

@@ -5,6 +5,7 @@ const resolvers = {
     Query: {
                
         getAUsersBookmarks:async(parent, {_id}) => {
+          console.log(_id);
           const allBooks=  await User.findById(
               {_id:_id}
               ).populate('bookmarks');

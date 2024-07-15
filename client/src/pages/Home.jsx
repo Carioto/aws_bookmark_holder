@@ -4,19 +4,19 @@ import Auth from '../utils/auth';
 import BookmarkContainer from '../components/BookmarkContainer'
 import { useQuery } from "@apollo/client";
 import './Home.css';
-
+import {GET_A_USERS_BOOKMARKS} from '../utils/queries'
 
 export default function Home(){
-
-
-
-
+    const userId = Auth.getProfile().data._id;
+    const { loading, data } = useQuery(GET_A_USERS_BOOKMARKS, {variables:{id:userId}})
+    const userName = Auth.getProfile().data.username;
+    
     return (
         <>
-        <h2>Welcome to your bookmarks</h2>
         
         {Auth.loggedIn()? (
-            <BookmarkContainer />
+            
+            <BookmarkContainer props={{data, userName}} />
 
 
 
