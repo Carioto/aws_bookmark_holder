@@ -4,18 +4,18 @@ const { signToken, AuthenticationError } = require('../utils/auth')
 const resolvers = {
     Query: {
                
-        getAUsersBookmarks:async(parent, {_id}) => {
-          console.log(_id);
-          const allBooks=  await User.findById(
-              {_id:_id}
-              ).populate('bookmarks');
-            return allBooks
-          },          
+        getAUsersBookmarks:async(parent, {username}) => {
+          const allBooks=  await Bookmark.find(
+            {username:username}
+            );
+            console.log("🚀 ~ getAUsersBookmarks:async ~ allBooks:", allBooks);
+            return allBooks;
+          },         
 
           getAllUsers:async() => {
           const allUsers =  await User.find();
             return allUsers
-          },          
+          },
     },
 
     Mutation: {

@@ -1,15 +1,13 @@
 import { gql } from '@apollo/client';
 
 
-export const GET_A_USERS_BOOKMARKS = gql`
-query GetAUsersBookmarks($id: ID) {
-  getAUsersBookmarks(_id: $id) {
-    bookmarks {
-      description
-      url
-      category
-    }
+export const GET_A_USERS_BOOKMARKS = gql `
+query GetBookmarks($username: ID) {
+  getAUsersBookmarks(username: $username) {
+    url
+    category
+    description
+    _id
   }
 }
-
 `;

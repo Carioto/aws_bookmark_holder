@@ -5,6 +5,7 @@ type Bookmark {
     description: String
     url:String
     category:String
+    username:ID
   }
     
 type User {
@@ -27,7 +28,7 @@ type Query {
     getAllUsers:[User]
 
     # get return one user's bookmarks
-    getAUsersBookmarks(_id:ID):User
+    getAUsersBookmarks(username:ID):[Bookmark]
 }
 
 type Mutation {
