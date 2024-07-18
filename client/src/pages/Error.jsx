@@ -9,7 +9,8 @@ export default function Error(){
         <>
         
        <h1 className='text-center'>OMFG!!!!</h1>
-        <button onClick={logout}>logout</button>
+        <button className='logoutBut'
+        onClick={logout}>logout</button>
         
         </>
     )

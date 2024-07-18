@@ -6,7 +6,7 @@ export default function Header() {
 
     return (
         <>
-        <h1>Your Bookmarks Holder</h1>
+        <h1 className='text-center mainHead'>Your Bookmarks Holder</h1>
         {Auth.loggedIn() ? (
             <button 
               className="logoutBut"

@@ -1,3 +1,4 @@
+import '../style/BookmarkContainer.css'
 import Auth from '../utils/auth';
 import BookmarkCat from './BookmarkCat';
 import { useQuery } from "@apollo/client";
@@ -21,7 +22,7 @@ export default function BookmarkContainer(){
 
 
         <div className="bmContainer">
-            <h2>Bookmarks for {userName}</h2>
+            <h3 className='text-center userHead'>{userName}</h3>
            
             <BookmarkCat  props={{data, userName}}/>
 

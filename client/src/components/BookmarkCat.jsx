@@ -3,9 +3,6 @@ import '../style/BookmarkCat.css'
 export default function BookmarkCat (props) {
 
 const theList = props.props.data.getAUsersBookmarks;
-console.log("🚀 ~ BookmarkCat ~ theList:", theList)
-
-// const uniqueCats = theList.map(item => item.category).filter((value,index,self) => self.indexOf(value) === index);
 
 const ColumnDisplay = (theList) => {
     return (
@@ -34,16 +31,48 @@ const ColumnDisplay = (theList) => {
       </div>
     );
   };
+  const uniqueCats = theList.map(item => item.category).filter((value,index,self) => self.indexOf(value) === index);
   
+const SingCat = (item) => {
 
+  let arr = []
+  theList.map((url) =>
+    {
+      if(url.category === item.props) {
+        arr.push(<li key={url._id}>{url.description}, {url.url}</li>);
+        }
+      }
+      
+    )
+    return(arr)
+}
+
+
+  const ThisDisplay = (theList) => {
+  return (
+<div>
+    {uniqueCats.map((item) => 
+    <div key={item}>
+      <h4 >{item}</h4>
+      <ul>
+      <SingCat props={item} />
+      </ul>
+
+      
+    </div>
+     
+      )}
+  </div>
+  )
+}
 
 
 
 return(
    <>
     <div>
-      <h1>Items Grouped by Category</h1>
-      <ColumnDisplay theList={theList} />
+      {/* <ColumnDisplay theList={theList} /> */}
+      <ThisDisplay theList={theList}/>
     </div>
 
   </>

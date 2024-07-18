@@ -52,9 +52,9 @@ const UserLogin = () => {
         </div>
       ) : (
         <div>
-          <p>Login</p>
+          <p className="loginHead text-center">Login</p>
           <form
-            className={`form`}
+            className={`form text-center formBoxes`}
             onSubmit={handleFormSubmit}
           >
             <input
@@ -67,7 +67,7 @@ const UserLogin = () => {
             />
             <input
               value={formState.password}
-              placeholder="********"
+              placeholder="Password"
               name="password"
               type="password"
               onChange={handleChange}

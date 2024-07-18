@@ -35,7 +35,7 @@ const authLink = setContext((_, { headers }) => {
 function App() {
 
   return (
-    <>
+    <div className='all'>
       <ApolloProvider client={client}>
                    <Header />
                 <main className="mx-3">
@@ -43,7 +43,7 @@ function App() {
                 </main>
                    <Footer />
       </ApolloProvider>
-    </>
+    </div>
   )
 }
 
