@@ -1,5 +1,6 @@
-const { Movie, Bookmark, User } = require('../models');
+const { Bookmark, User } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth')
+const mongoose = require("mongoose");
 
 const resolvers = {
     Query: {
@@ -7,7 +8,18 @@ const resolvers = {
         getAUsersBookmarks:async(parent, {username}) => {
           const allBooks=  await Bookmark.find(
             {username:username}
-            );
+            ).sort("category");
+            return allBooks;
+          },         
+        getAggBookmarks:async(parent, {username}) => {
+          console.log("🚀 ~ getAggBookmarks:async ~ username:", username)
+          const uName = new mongoose.Types.ObjectId(username)
+          const allBooks=  await Bookmark.aggregate([
+            {$match:{username:uName}},
+            {$sort: {category:1}},
+            {$group: {_id:"$category"}},
+
+          ]);
             console.log("🚀 ~ getAUsersBookmarks:async ~ allBooks:", allBooks);
             return allBooks;
           },         

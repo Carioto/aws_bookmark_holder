@@ -22,7 +22,10 @@ export default function BookmarkContainer(){
 
         <div className="bmContainer">
             <h2>Bookmarks for {userName}</h2>
+           
             <BookmarkCat  props={{data, userName}}/>
+
+           
         </div>
         
         </>

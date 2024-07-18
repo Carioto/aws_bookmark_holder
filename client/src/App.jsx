@@ -1,5 +1,5 @@
 
-import './App.css'
+import './style/App.css'
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,7 +8,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
-import Header from './components/Header.jsx'
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,6 +41,7 @@ function App() {
                 <main className="mx-3">
                     <Outlet />
                 </main>
+                   <Footer />
       </ApolloProvider>
     </>
   )

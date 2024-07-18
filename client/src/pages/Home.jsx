@@ -1,7 +1,7 @@
 import Auth from '../utils/auth';
 import { Link } from "react-router-dom";
 import BookmarkContainer from '../components/BookmarkContainer'
-import './Home.css';
+import '../style/Home.css';
 
 export default function Home(){
 

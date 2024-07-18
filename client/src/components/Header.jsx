@@ -1,5 +1,5 @@
 import Auth from '../utils/auth'
-
+import '../style/Header.css'
 
 export default function Header() {
 

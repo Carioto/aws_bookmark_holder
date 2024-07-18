@@ -29,6 +29,9 @@ type Query {
 
     # get return one user's bookmarks
     getAUsersBookmarks(username:ID):[Bookmark]
+
+    #agrregate a user's bookmarks
+    getAggBookmarks(username:ID):[Bookmark]
 }
 
 type Mutation {

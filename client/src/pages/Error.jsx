@@ -1,4 +1,4 @@
-import './Error.css';
+import '../style/Error.css';
 import Auth from '../utils/auth';
 
 
