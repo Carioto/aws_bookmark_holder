@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home.jsx';
 import Error from './pages/Error.jsx';
 import UserLogin from './pages/UserLogin.jsx';
+import Join from './pages/Join.jsx'
+
 const router = createBrowserRouter([
   {
     path:'/',
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
       {
       path:'/UserLogin',  
       element: <UserLogin />,
+      },
+      {
+      path:'/Join',  
+      element: <Join />,
       },
     ],
   }

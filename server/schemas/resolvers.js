@@ -44,8 +44,9 @@ const resolvers = {
       return { token, user };
       },
 
-      addUser: async (parent, { firstName, lastName, username, password }) => {     
-        return User.create({firstName, lastName, username, password})
+      addUser: async (parent, { firstName, lastName, username, password }) => {  
+        const profile = await User.create({firstName, lastName, username, password});
+        return profile;
       },
 
       addBookmark: async (parent,{_id,url, description, category}) => {

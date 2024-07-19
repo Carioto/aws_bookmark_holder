@@ -4,7 +4,11 @@
 }
 
 .bookmarkCol {
+  width: 100%;
   display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 ul {

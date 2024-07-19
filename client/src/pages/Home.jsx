@@ -13,7 +13,10 @@ export default function Home(){
             <BookmarkContainer />
  
         ):(
+            <>
             <p className='signinP text-center'>Please <Link to="/UserLogin">sign in</Link> to continue</p>
+            <p className='joinP text-center'>Or <Link to="/Join">Join</Link> to get started</p>
+            </>
         )}       
         </>
     );

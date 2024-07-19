@@ -1,0 +1,25 @@
+.joinHead {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin-top: 25px;
+}
+input {
+  margin: 3px;
+}
+
+.comms {
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.homeBut {
+  text-decoration: none;
+  margin: 3px;
+}
+
+.joinBut {
+  margin-right: 5px;
+}
