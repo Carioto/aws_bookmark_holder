@@ -1,3 +1,4 @@
+import Auth from './utils/auth'
 
 import './style/App.css'
 import {
@@ -41,6 +42,13 @@ function App() {
                 <main className="mx-3">
                     <Outlet />
                 </main>
+                {Auth.loggedIn() ? (
+            <button 
+              className="logoutBut"
+              onClick={Auth.logout}>Logout</button>
+        ): (
+            <p></p>
+        )}
                    <Footer />
       </ApolloProvider>
     </div>

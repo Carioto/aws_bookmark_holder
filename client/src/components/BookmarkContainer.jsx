@@ -22,7 +22,8 @@ export default function BookmarkContainer(){
 
 
         <div className="bmContainer">
-            <h3 className='text-center userHead'>{userName}</h3>
+            <p className='text-center userHead'>You are logged in as:</p>
+            <h3 className='text-center userBott'>{userName}</h3>
            
             <BookmarkCat  props={{data, userName}}/>
 
