@@ -2,3 +2,21 @@
 .joinP {
   font-size: 1.25rem;
 }
+
+.logoutBut {
+  position: fixed;
+  right: 1%;
+  bottom: 6%;
+  font-size: 1rem;
+}
+.addBookBut {
+  position: fixed;
+  left: 1%;
+  bottom: 6%;
+}
+
+.addBookLink {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}

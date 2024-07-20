@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home.jsx';
 import Error from './pages/Error.jsx';
 import UserLogin from './pages/UserLogin.jsx';
-import Join from './pages/Join.jsx'
+import Join from './pages/Join.jsx';
+import AddBookmark from './components/AddBookmark.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
       path:'/Join',  
       element: <Join />,
+      },
+      {
+      path:'/AddBookmark',  
+      element: <AddBookmark />,
       },
     ],
   }

@@ -1,6 +1,7 @@
 import '../style/BookmarkCat.css'
 
 export default function BookmarkCat (props) {
+console.log("🚀 ~ BookmarkCat ~ props:", props)
 
 const theList = props.props.data.getAUsersBookmarks;
 

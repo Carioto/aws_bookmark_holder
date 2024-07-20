@@ -23,3 +23,12 @@ mutation AddUser($firstName: String, $lastName: String, $username: String, $pass
   }
 }
 `;
+
+export const ADD_A_BOOKMARK = gql `
+mutation AddBookmark($id: ID, $url: String, $description: String, $category: String) {
+  addBookmark(_id: $id, url: $url, description: $description, category: $category) {
+    url
+    description
+  }
+}
+`;
