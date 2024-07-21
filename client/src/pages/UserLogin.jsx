@@ -25,16 +25,15 @@ const UserLogin = () => {
       const { data } = await login({
         variables: { ...formState },
       });
-      
+
       if (!data) {
         setErrorMessage("Login unsucessful");
         return;
       }
-      
+
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
-
     }
 
     setFormState({
@@ -46,9 +45,7 @@ const UserLogin = () => {
   return (
     <div>
       {Auth.loggedIn() ? (
-        <div>
-          {window.location.assign("/")}
-        </div>
+        <div>{window.location.assign("/")}</div>
       ) : (
         <div>
           <p className="loginHead text-center">Login</p>
@@ -78,7 +75,7 @@ const UserLogin = () => {
 
             {error && (
               <div>
-                <p >{error.message}</p>
+                <p>{error.message}</p>
               </div>
             )}
           </form>

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($username: String!, $password: String!) {
@@ -10,33 +10,52 @@ export const LOGIN_USER = gql`
       }
     }
   }
-
 `;
 
-export const NEW_USER = gql `
-mutation AddUser($firstName: String, $lastName: String, $username: String, $password: String) {
-  addUser(firstName: $firstName, lastName: $lastName, username: $username, password: $password) {
-  firstName
-  lastName
-  password
-  username  
+export const NEW_USER = gql`
+  mutation AddUser(
+    $firstName: String
+    $lastName: String
+    $username: String
+    $password: String
+  ) {
+    addUser(
+      firstName: $firstName
+      lastName: $lastName
+      username: $username
+      password: $password
+    ) {
+      firstName
+      lastName
+      password
+      username
+    }
   }
-}
 `;
 
-export const ADD_A_BOOKMARK = gql `
-mutation AddBookmark($id: ID, $url: String, $description: String, $category: String) {
-  addBookmark(_id: $id, url: $url, description: $description, category: $category) {
-    url
-    description
+export const ADD_A_BOOKMARK = gql`
+  mutation AddBookmark(
+    $id: ID
+    $url: String
+    $description: String
+    $category: String
+  ) {
+    addBookmark(
+      _id: $id
+      url: $url
+      description: $description
+      category: $category
+    ) {
+      url
+      description
+    }
   }
-}
 `;
 
-export const DEL_A_BOOKMARK = gql `
-mutation Mutation($id: ID) {
-  deleteBookmark(_id: $id) {
-    url
+export const DEL_A_BOOKMARK = gql`
+  mutation Mutation($id: ID) {
+    deleteBookmark(_id: $id) {
+      url
+    }
   }
-}
 `;

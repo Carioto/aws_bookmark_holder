@@ -1,4 +1,4 @@
-const Bookmark = require('./Bookmark');
-const User = require('./User')
+const Bookmark = require("./Bookmark");
+const User = require("./User");
 
-module.exports = {Bookmark, User};
+module.exports = { Bookmark, User };
