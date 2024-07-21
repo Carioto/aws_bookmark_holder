@@ -1,0 +1,8 @@
+@media screen and (max-width: 555px) {
+  .bmContainer {
+    margin-bottom: 55%;
+  }
+  .userP {
+    display: none;
+  }
+}
