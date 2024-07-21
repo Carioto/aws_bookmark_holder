@@ -1,6 +1,6 @@
-.editBut,
 .deleteBut {
   border: none;
+  font-size: 0.6rem;
 }
 
 .bookmarkCol {

@@ -14,6 +14,13 @@
   left: 1%;
   bottom: 6%;
 }
+.userP {
+  position: fixed;
+  margin: auto;
+  bottom: 6%;
+  left: 0;
+  right: 0;
+}
 
 .addBookLink {
   text-decoration: none;

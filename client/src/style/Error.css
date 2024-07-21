@@ -1,3 +1,4 @@
-h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+.errP {
+  margin-top: 25%;
+  color: red;
 }

@@ -32,3 +32,11 @@ mutation AddBookmark($id: ID, $url: String, $description: String, $category: Str
   }
 }
 `;
+
+export const DEL_A_BOOKMARK = gql `
+mutation Mutation($id: ID) {
+  deleteBookmark(_id: $id) {
+    url
+  }
+}
+`;

@@ -68,7 +68,9 @@ const resolvers = {
       },
 
       deleteBookmark: async (parent,{_id}) => {
+        console.log("🚀 ~ deleteBookmark: ~ _id:", _id)
         const delBookmark = await Bookmark.findByIdAndDelete({_id:_id})
+        
         return delBookmark;
       }
     }

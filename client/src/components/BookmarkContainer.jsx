@@ -6,10 +6,9 @@ import {GET_A_USERS_BOOKMARKS} from '../utils/queries';
 
 export default function BookmarkContainer(){
     const userId = Auth.getProfile().data._id;
-    
-    const { loading, data } = useQuery(GET_A_USERS_BOOKMARKS, {variables:{username:userId}});   
-
     const userName = Auth.getProfile().data.username;
+
+    const { loading, data } = useQuery(GET_A_USERS_BOOKMARKS, {variables:{username:userId}});   
 
   //DONT FORGET THIS THIS SCREWED YOU UP FOR HALF A DAY  
     if(!loading){
@@ -19,11 +18,10 @@ export default function BookmarkContainer(){
         <>
 
         <div className="bmContainer">
-            <p className='text-center userHead'>You are logged in as:</p>
-            <h3 className='text-center userBott'>{userName}</h3>
            
-            <BookmarkCat  props={{data, userName}}/>
- 
+            <BookmarkCat  props={{data}}/>
+            <p className='text-center userP'>You are logged in as: <strong>{userName}</strong> </p>          
+
         </div>
 
         </>

@@ -4,6 +4,8 @@ import BookmarkContainer from '../components/BookmarkContainer'
 import '../style/Home.css';
 
 export default function Home(){
+
+
     return (
         <>
         
@@ -11,12 +13,12 @@ export default function Home(){
             <>
             <BookmarkContainer />
             <button 
-              className="logoutBut"
-              onClick={Auth.logout}>Logout
-              </button>
-            <button 
               className='addBookBut'>
               <Link className='addBookLink' to={'/AddBookmark'}>Add a Bookmark</Link>
+              </button>
+            <button 
+              className="logoutBut"
+              onClick={Auth.logout}>Logout
               </button>
             </>
  
