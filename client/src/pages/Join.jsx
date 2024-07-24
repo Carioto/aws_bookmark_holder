@@ -96,7 +96,7 @@ const Join = () => {
       )}
       {error && (
         <div className="my-3 p-3 bg-danger text-white text-center comms">
-          Sorry, An error occured. Try a different username.
+          Sorry, An error occured.
           {console.log(error.message)}
         </div>
       )}

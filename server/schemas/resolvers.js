@@ -71,6 +71,7 @@ const resolvers = {
         { _id: _id },
         { $addToSet: { bookmarks: newUrl.id } },
       );
+      console.log("🚀 ~ addBookmark: ~ newUrl:", newUrl)
       return newUrl;
     },
 

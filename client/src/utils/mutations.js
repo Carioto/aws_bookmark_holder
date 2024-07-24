@@ -46,8 +46,10 @@ export const ADD_A_BOOKMARK = gql`
       description: $description
       category: $category
     ) {
+      _id
       url
       description
+      category
     }
   }
 `;
