@@ -31,7 +31,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     open: true,
     proxy: {
       "/graphql": {
-        target: "https://bookmark-holder-36a65b094507.herokuapp.com/",
+        target: "https://bookmark-server-e0d8f2210d08.herokuapp.com/",
         changeOrigin: true,
         secure: false,
       },
