@@ -7,22 +7,22 @@ import react from "@vitejs/plugin-react";
 
 
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
-  if (command === 'serve') {
-    return {
-      plugins: [react()],
-        server: {
-          port: 3000,
-          open: true,
-          proxy: {
-            "/graphql": {
-              target: "http://localhost:3001",
-              changeOrigin: true,
-              secure: false,
-            },
-          },
-        },
-    }
-  } else {
+  // if (command === 'serve') {
+  //   return {
+  //     plugins: [react()],
+  //       server: {
+  //         port: 3000,
+  //         open: true,
+  //         proxy: {
+  //           "/graphql": {
+  //             target: "http://localhost:3001",
+  //             changeOrigin: true,
+  //             secure: false,
+  //           },
+  //         },
+  //       },
+  //   }
+  // } else {
     // command === 'build'
     return {
       plugins: [react()],
@@ -39,7 +39,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
 //   },
     }
   }
-}})
+// }})
 
 // export default defineConfig({
 //   plugins: [react()],
