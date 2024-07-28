@@ -65,7 +65,7 @@ const AddBookmark = () => {
               Submit
             </button>
             <button>
-              <Link to="/" className="text-black homeBut">
+              <Link to="/" reloadDocument className="text-black homeBut">
                 Go Back
               </Link>
             </button>
