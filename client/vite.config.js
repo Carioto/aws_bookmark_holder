@@ -36,10 +36,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         secure: false,
       },
     },
-//   },
-    }
+//   },    }
   }
-// }})
+}
+})
 
 // export default defineConfig({
 //   plugins: [react()],
