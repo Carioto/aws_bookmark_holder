@@ -27,12 +27,12 @@ const startApolloServer = async () => {
     }),
   );
 
-  if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client/dist")));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, " ../client/dist/index.html"));
-    });
-  }
+  // if (process.env.NODE_ENV === "production") {
+  //   app.use(express.static(path.join(__dirname, "../client/dist")));
+  //   app.get("*", (req, res) => {
+  //     res.sendFile(path.join(__dirname, " ../client/dist/index.html"));
+  //   });
+  // }
 
   app.get('/test', (req,res) => {res.send(`Hello from the server!!!`)})
   db.once("open", () => {
