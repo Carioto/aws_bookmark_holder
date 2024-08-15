@@ -60,6 +60,7 @@ const UserLogin = () => {
               type="username"
               onChange={handleChange}
               className={`form-control`}
+              autoFocus
             />
             <input
               value={formState.password}

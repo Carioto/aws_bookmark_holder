@@ -49,6 +49,7 @@ const Join = () => {
             value={joinState.firstName}
             onChange={handleChange}
             required
+            autoFocus
           />
           <input
             placeholder="Last Name"

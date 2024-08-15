@@ -9,6 +9,7 @@ export default function Home() {
       {Auth.loggedIn() ? (
         <>
           <BookmarkContainer />
+          
           <button className="addBookBut">
             <Link className="addBookLink" to={"/AddBookmark"}>
               Add a Bookmark

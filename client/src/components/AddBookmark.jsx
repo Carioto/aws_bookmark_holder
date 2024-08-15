@@ -46,6 +46,7 @@ const AddBookmark = () => {
               placeholder="URL"
               value={bookmark.url}
               onChange={handleChange}
+              autoFocus
             />
             <input
               className="descIn"
