@@ -9,7 +9,7 @@ export default function Home() {
       {Auth.loggedIn() ? (
         <>
           <BookmarkContainer />
-          
+          <img className='arrowPng' src='./arrow.png' alt='arrow pointing at add bookmark button'/>
           <button className="addBookBut">
             <Link className="addBookLink" to={"/AddBookmark"}>
               Add a Bookmark
